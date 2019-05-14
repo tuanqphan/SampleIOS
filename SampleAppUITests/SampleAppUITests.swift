@@ -31,6 +31,24 @@ class SampleAppUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        app.navigationBars["SampleApp.PlayersTableView"].buttons["Add"].tap()
+        
+        let tablesQuery2 = app.tables
+        let textField = tablesQuery2.children(matching: .cell).element(boundBy: 0).children(matching: .textField).element
+        textField.tap()
+        textField.typeText("Tuan")
+        
+        let tablesQuery = tablesQuery2
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Detail"]/*[[".cells.staticTexts[\"Detail\"]",".staticTexts[\"Detail\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Russian Roulette"]/*[[".cells.staticTexts[\"Russian Roulette\"]",".staticTexts[\"Russian Roulette\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let incrementButton = tablesQuery/*@START_MENU_TOKEN@*/.buttons["Increment"]/*[[".cells.buttons[\"Increment\"]",".buttons[\"Increment\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        incrementButton.tap()
+        incrementButton.tap()
+        app.navigationBars["SampleApp.PlayerDetailsTableView"].buttons["Done"].tap()
+        
     }
     
 }
