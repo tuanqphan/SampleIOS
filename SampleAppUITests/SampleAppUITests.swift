@@ -51,4 +51,18 @@ class SampleAppUITests: XCTestCase {
         
     }
     
+    func testSample2(){
+        
+        let app = XCUIApplication()
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Gestures"].tap()
+        tabBarsQuery.buttons["Item"].tap()
+        
+        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+        element.children(matching: .other).element.buttons["Button"].tap()
+        element.children(matching: .button)["Button"].tap()
+        app.buttons["Tap2"].tap()
+        
+    }
+    
 }

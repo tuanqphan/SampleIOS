@@ -23,9 +23,9 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "NO"
-            buildForProfiling = "NO"
+            buildForProfiling = "YES"
             buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "559105552085513500F82E5D"
