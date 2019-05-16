@@ -51,7 +51,7 @@ class SampleAppUITests: XCTestCase {
         
     }
     
-    func testSample2(){
+    func testSample2() {
         
         let app = XCUIApplication()
         let tabBarsQuery = app.tabBars
@@ -62,6 +62,34 @@ class SampleAppUITests: XCTestCase {
         element.children(matching: .other).element.buttons["Button"].tap()
         element.children(matching: .button)["Button"].tap()
         app.buttons["Tap2"].tap()
+        
+    }
+    
+    func testSample3() {
+        let app = XCUIApplication()
+        app.navigationBars["SampleApp.PlayersTableView"].buttons["Add"].tap()
+        
+        let tablesQuery2 = app.tables
+        tablesQuery2.children(matching: .cell).element(boundBy: 0).children(matching: .textField).element.tap()
+        
+        let tablesQuery = tablesQuery2
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Detail"]/*[[".cells.staticTexts[\"Detail\"]",".staticTexts[\"Detail\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Poor man chess"]/*[[".cells.staticTexts[\"Poor man chess\"]",".staticTexts[\"Poor man chess\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let incrementButton = tablesQuery/*@START_MENU_TOKEN@*/.buttons["Increment"]/*[[".cells.buttons[\"Increment\"]",".buttons[\"Increment\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        incrementButton.tap()
+        incrementButton.tap()
+        incrementButton.tap()
+        app.navigationBars["SampleApp.PlayerDetailsTableView"].buttons["Done"].tap()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Gestures"].tap()
+        app.navigationBars["UIView"].buttons["Home"].tap()
+        tabBarsQuery.buttons["Item"].tap()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .button)["Button"].tap()
+        app.navigationBars["SampleApp.Tap2View"].buttons["Next"].tap()
+        app.navigationBars["SampleApp.Tap1View"].buttons["Back"].tap()
+        tabBarsQuery.buttons["Players"].tap()
         
     }
     
