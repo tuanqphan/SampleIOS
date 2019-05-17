@@ -90,6 +90,7 @@ class SampleAppUITests: XCTestCase {
         app.navigationBars["SampleApp.Tap2View"].buttons["Next"].tap()
         app.navigationBars["SampleApp.Tap1View"].buttons["Back"].tap()
         tabBarsQuery.buttons["Players"].tap()
+
         
     }
     
